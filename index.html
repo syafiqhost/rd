@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Gambar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <!-- Gambar pertama -->
+        <img class="mySlides" src="https://via.placeholder.com/1200x500/ff7f7f/333333?text=Gambar+1" alt="Gambar 1">
+
+        <!-- Gambar kedua -->
+        <img class="mySlides" src="https://via.placeholder.com/1200x500/7f7fff/333333?text=Gambar+2" alt="Gambar 2">
+
+        <!-- Gambar ketiga -->
+        <img class="mySlides" src="https://via.placeholder.com/1200x500/7fff7f/333333?text=Gambar+3" alt="Gambar 3">
+
+        <!-- Tombol prev dan next -->
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    <div class="snow"></div>
+    <script src="script.js" defer></script>
+    <script>
+        // Add random snowfall flakes
+        const snowContainer = document.querySelector('.snow');
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = `${Math.random() * 100}vw`; // Random position
+            snowflake.style.animationDuration = `${Math.random() * 3 + 5}s`; // Random fall speed
+            snowflake.style.animationDelay = `${Math.random() * 3}s`; // Random delay
+            snowContainer.appendChild(snowflake);
+        }
+
+        setInterval(createSnowflake, 200); // Create a new snowflake every 200ms
+    </script>
+
+</body>
+
+</html>
